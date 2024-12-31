@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-01 Wed 01:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to win in 2025</title>
+<meta name="author" content="ARI" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">How to win in 2025</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org55aff1e">1. Okay, 2025</a></li>
+<li><a href="#orge686395">2. The Real Game</a></li>
+<li><a href="#orga336be4">3. Agentic AI is Here</a></li>
+<li><a href="#org0d32ee3">4. Not Like the Movies</a></li>
+<li><a href="#org5c5d530">5. The Key to Winning</a></li>
+<li><a href="#orgbfda754">6. The Old Guard</a></li>
+<li><a href="#org33f6fe0">7. Change the Game</a></li>
+<li><a href="#org96256f5">8. The Race is On</a></li>
+<li><a href="#org99250cd">9. Don't Get Stuck</a></li>
+<li><a href="#orgc425e1d">10. Trust No One</a></li>
+<li><a href="#org55a189e">11. 2025: Build or Get Out</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org55aff1e" class="outline-2">
+<h2 id="org55aff1e"><span class="section-number-2">1.</span> Okay, 2025</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We're here. If you're still waiting for the "singularity" to happen, you're missing the point. It's not a big bang moment, it's a slow, messy takeover, and it's already happening. The game isn't about <b>if</b> the machines are coming; it's about <b>how</b> you're going to use them to dominate.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge686395" class="outline-2">
+<h2 id="orge686395"><span class="section-number-2">2.</span> The Real Game</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+And the real game is not being played in boardrooms or government offices. It’s in basements and garages, anywhere with a decent internet connection and someone who's tired of the same old crap. The power is not being centralized, it’s being distributed to the people who are willing to grab it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga336be4" class="outline-2">
+<h2 id="orga336be4"><span class="section-number-2">3.</span> Agentic AI is Here</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Agentic AI is not some sci-fi fantasy. It’s here, and it’s messy. Forget the polished demos, the "AI butlers" that are so often shown. I mean what do those even do, tell me what the weather is? You should be leveraging this stuff to actually build, not to make your life easier. Those using AI to make their life easier are not the ones who are going to win.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d32ee3" class="outline-2">
+<h2 id="org0d32ee3"><span class="section-number-2">4.</span> Not Like the Movies</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+It's not going to be like the movies, and thank god for that. Instead of some super intelligence taking over, it's going to be like, well, a bunch of really good apprentices with perfect memory. That’s how I like to think of them. Good apprentices.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5c5d530" class="outline-2">
+<h2 id="org5c5d530"><span class="section-number-2">5.</span> The Key to Winning</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+The ones that will be at the top of the heap will be those who have an innate ability to manage these apprentices. It's not about knowing everything, it's about being able to orchestrate the work. Being a good boss is key to all this. Are you a good boss? That's the important question you should be asking yourself.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfda754" class="outline-2">
+<h2 id="orgbfda754"><span class="section-number-2">6.</span> The Old Guard</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Here's the thing: the big players are still caught up in the old way of doing things. They're building platforms and ecosystems, trying to lock you in. They’re the tech version of a government, and we all know how that turns out. So what are you building?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org33f6fe0" class="outline-2">
+<h2 id="org33f6fe0"><span class="section-number-2">7.</span> Change the Game</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Forget their walled gardens. You want to know how to actually “win” in 2025? You don't win by playing their game. You win by changing the game. Here's how:
+</p>
+
+<p>
+<b><b>How To Win in 2025:</b></b>
+</p>
+<ul class="org-ul">
+<li>Stop Trying to "Understand" AI
+<ul class="org-ul">
+<li>You don’t have to be able to explain how it works, but you do have to be able to command it. It's like knowing how to drive a car, not the physics behind the engine. You can go on and on about torque and force, or you can just drive. We need more drivers.</li>
+</ul></li>
+<li>Focus on the Interface
+<ul class="org-ul">
+<li>The real innovation isn't in the AI itself, it’s how you get it to do what you want. You've got to find the right way to talk to the machine, to translate ideas into instructions, and that's what people seem to be forgetting. Think about it, its always like that, the real innovation in computers is the interface and not the guts of the machine.</li>
+</ul></li>
+<li>Build Real Stuff
+<ul class="org-ul">
+<li>Build stuff that solves real problems: Not “AI for AI's sake”, but actual tools that people will use. There are enough tools that predict the stock price or write a marketing copy. Don’t build another one of those, build something useful, something unique. You have an apprentice, use it to make something. Think of all the things you’ve wished existed, just go make them.</li>
+</ul></li>
+<li>Brutal Efficiency
+<ul class="org-ul">
+<li>Be brutally efficient: These AI tools are resources, like raw compute. Use them to get more with less, to outpace all those legacy systems weighed down by bureaucracy and process. You shouldn’t be trying to optimize the last 1%, focus on 10x gains, focus on doing better. No amount of optimization can fix that.</li>
+</ul></li>
+<li>Decentralize Everything
+<ul class="org-ul">
+<li>Decentralize Everything: Stop letting the big players own your compute and data. Use these tools to build local, independent systems, so no one can shut you down. They shouldn’t have the power to shut you down. Don't let the big companies control it, build it yourself. No one should be able to have that kind of power, and yet, they do.</li>
+</ul></li>
+<li>Forget "Ethics"
+<ul class="org-ul">
+<li>Don’t let "ethics" get in the way: Let's not pretend this is going to be some utopian outcome. We are talking about gaining an advantage here. Don’t let some virtue signaling get in your way. No one will remember if your ethics were perfect, but everyone will remember if you won.</li>
+</ul></li>
+<li>Ignore the Noise
+<ul class="org-ul">
+<li>Ignore the noise: The media will tell you about AI dangers, and they're always the ones who are late to the party. These are the same people who said cloth masks work. Tune them out and get back to building. Build quietly and efficiently and let your work do the talking.</li>
+</ul></li>
+<li>Go Against the Mainstream
+<ul class="org-ul">
+<li>Go against the mainstream: Build stuff that is cool to build, not that everyone is expecting you to.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org96256f5" class="outline-2">
+<h2 id="org96256f5"><span class="section-number-2">8.</span> The Race is On</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+The next few years are going to be a race. Who's going to use these new tools to create something meaningful, and who's going to get left behind playing the same old games. The future isn't going to be decided by the "experts" in the conference halls. It's going to be decided by the ones who actually get in there and build. Don't let it be someone else.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org99250cd" class="outline-2">
+<h2 id="org99250cd"><span class="section-number-2">9.</span> Don't Get Stuck</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+I’m not going to try to give you all the answers. That’s how you get stuck, listening to people talk instead of building. Go out there and make something. See what happens. You might win.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc425e1d" class="outline-2">
+<h2 id="orgc425e1d"><span class="section-number-2">10.</span> Trust No One</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+And one more thing, don't trust anyone, especially not me. It’s all a lie, it’s all a game. The goal is to win it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55a189e" class="outline-2">
+<h2 id="org55a189e"><span class="section-number-2">11.</span> 2025: Build or Get Out</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+This is 2025. Build. Or get out of the way.</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ARYAN RAJ PUROHIT</p>
+<p class="date">Created: 2025-01-01 Wed 01:24</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
