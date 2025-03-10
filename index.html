@@ -5,76 +5,549 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Blogs</title>
   <style>
+    /* Base styles */
     body {
       margin: 0;
       padding: 0;
       background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', monospace;
+      color: #333;
+      padding-bottom: 100px;
     }
+    
+    /* Main container */
     .landing-page {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
       padding-top: 50px;
     }
+    
+    /* Header styling */
     .heading-container {
       background-color: #333;
       color: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 8px;
       display: inline-block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
     }
-    .landing-page h1 {
-      margin: 0;
-      font-size: 2em;
+    
+    /* Pixel text styling */
+    .pixel-text {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      padding: 10px 0;
     }
+    
+    .pixel-letter {
+      position: relative;
+      width: 30px;
+      height: 50px;
+    }
+    
+    .pixel-letter.space {
+      width: 20px;
+    }
+    
+    .pixel {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+    }
+    
+    /* Cursor animation */
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 24px;
+      background-color: #fff;
+      margin-left: 10px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    
+    /* Post section */
     .post-heading {
       font-size: 1.5em;
-      margin-top: 30px;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
     }
+    
+    .post-heading::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 25%;
+      width: 50%;
+      height: 3px;
+      background-color: #333;
+    }
+    
+    .posts-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+    
     .post {
       background-color: #FFF;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: left;
-      margin-bottom: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      border-left: 4px solid #333;
     }
-    .post h2 {
-      font-size: 1.3em;
-      margin-bottom: 10px;
+    
+    .post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
-    .post p {
-      font-size: 1.1em;
-      line-height: 1.5;
+    
+    .post a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 10px 0;
     }
+    
+    .post h3 {
+      margin: 0;
+      transition: color 0.2s ease;
+    }
+    
+    .post a:hover h3 {
+      color: #555;
+    }
+    
+    .post-meta {
+      font-size: 0.85em;
+      color: #777;
+      margin-top: 8px;
+    }
+    
+    /* Pixel decoration */
+    .pixel-decoration {
+      width: 8px;
+      height: 8px;
+      background-color: #333;
+      position: absolute;
+      opacity: 0.2;
+    }
+    
+    /* Footer */
     footer {
-      background-color: #c2c2c2;
-      color: rgb(58, 58, 58);
-      padding: 20px;
+      background-color: #333;
+      color: #f0f0f0;
+      padding: 15px 0;
       text-align: center;
       position: fixed;
       left: 0;
       bottom: 0;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    footer p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    footer a {
+      color: #f0f0f0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    
+    footer a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    footer img {
+      height: 20px;
+      vertical-align: middle;
+    }
+    
+    .brand {
+      font-style: italic;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .posts-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .landing-page {
+        padding-top: 30px;
+      }
+      
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
+      
+      .pixel-text {
+        transform: scale(0.8);
+        margin: -15px 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="landing-page">
     <div class="heading-container">
-      <h1>Singularity seems far</h1>
+      <div class="pixel-text">
+        <!-- S -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 0px;"></div>
+          <div class="pixel" style="top: 0px; left: 10px;"></div>
+          <div class="pixel" style="top: 0px; left: 20px;"></div>
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 10px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- i -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 10px;"></div>
+          <div class="pixel" style="top: 20px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+        </div>
+        
+        <!-- n -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- g -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+          <div class="pixel" style="top: 50px; left: 0px;"></div>
+          <div class="pixel" style="top: 50px; left: 10px;"></div>
+          <div class="pixel" style="top: 50px; left: 20px;"></div>
+        </div>
+        
+        <!-- u -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- l -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+        </div>
+        
+        <!-- a -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- r -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- i -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 10px;"></div>
+          <div class="pixel" style="top: 20px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+        </div>
+        
+        <!-- t -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- y -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+        </div>
+        
+        <!-- space -->
+        <div class="pixel-letter space"></div>
+        
+        <!-- s -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+        </div>
+        
+        <!-- e -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- e -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- m -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 10px; left: 30px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 40px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 40px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 40px;"></div>
+        </div>
+        
+        <!-- s -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+        </div>
+        
+        <!-- space -->
+        <div class="pixel-letter space"></div>
+        
+        <!-- f -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 0px; left: 0px;"></div>
+          <div class="pixel" style="top: 0px; left: 10px;"></div>
+          <div class="pixel" style="top: 0px; left: 20px;"></div>
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 10px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+        </div>
+        
+        <!-- a -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 30px; left: 20px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+        
+        <!-- r -->
+        <div class="pixel-letter">
+          <div class="pixel" style="top: 10px; left: 0px;"></div>
+          <div class="pixel" style="top: 10px; left: 10px;"></div>
+          <div class="pixel" style="top: 10px; left: 20px;"></div>
+          <div class="pixel" style="top: 20px; left: 0px;"></div>
+          <div class="pixel" style="top: 20px; left: 20px;"></div>
+          <div class="pixel" style="top: 30px; left: 0px;"></div>
+          <div class="pixel" style="top: 30px; left: 10px;"></div>
+          <div class="pixel" style="top: 40px; left: 0px;"></div>
+          <div class="pixel" style="top: 40px; left: 20px;"></div>
+        </div>
+
+        <!-- Cursor -->
+        <div class="cursor"></div>
+      </div>
     </div>
+    
     <div class="post-heading">Posts</div>
-    <div class="post">
-      <h2><a href="blog_Website/blogs/anti-ai.html">Anti-Ai</a></h2>
-       </div>
-    <div class="post">
-     <h3><a href="blog_Website/blogs/how-to-win-2025.html">How to win 2025</a></h3>
+    
+    <div class="posts-container">
+      <div class="post">
+        <a href="blog_Website/blogs/can_ai_help.html">
+          <h3>Self-Actualization and Can AI Help?</h3>
+          <div class="post-meta">Published on March 15, 2025 • -1 min read</div>
+        </a>
+        <span class="pixel-decoration" style="top: 10px; right: 15px;"></span>
+        <span class="pixel-decoration" style="bottom: 20px; left: 25px;"></span>
+      </div>
+      
+      <div class="post">
+        <a href="blog_Website/blogs/how-to-win-2025.html">
+          <h3>How to win 2025</h3>
+          <div class="post-meta">Published on Jan 1, 2025 • -1 min read</div>
+        </a>
+        <span class="pixel-decoration" style="top: 25px; left: 15px;"></span>
+        <span class="pixel-decoration" style="bottom: 10px; right: 30px;"></span>
+      </div>
+      
+      <div class="post">
+        <a href="blog_Website/blogs/anti-ai.html">
+          <h3>Anti-Ai</h3>
+          <div class="post-meta">Published on April 25, 2024  • -1 min read</div>
+        </a>
+        <span class="pixel-decoration" style="top: 20px; left: 30px;"></span>
+        <span class="pixel-decoration" style="bottom: 15px; right: 20px;"></span>
+      </div>
     </div>
   </div>
+  
   <footer>
-    <p> <a href="blog_Website/about.html"><img src="blog_Website/images/about.png" alt="about" height="20"></a></p>
-    <p><a href="https://github.com/Guney-olu"><img src="blog_Website/images/github.png" alt="GitHub" height="20"></a></p>
-    <p><a style="font-style: italic;">Sick Website Production</a></p>
-</footer>
+    <p>
+      <a href="blog_Website/about.html">
+        <img src="blog_Website/images/about.png" alt="About"> About
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/Guney-olu">
+        <img src="blog_Website/images/github.png" alt="GitHub"> GitHub
+      </a>
+    </p>
+    <p class="brand">Sick Website Production</p>
+  </footer>
+
+  <script>
+    function addRandomPixels() {
+      const container = document.querySelector('.landing-page');
+      for (let i = 0; i < 12; i++) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel-decoration');
+        pixel.style.left = Math.random() * 100 + '%';
+        pixel.style.top = Math.random() * 100 + '%';
+        container.appendChild(pixel);
+      }
+    }
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      addRandomPixels();
+    });
+  </script>
 </body>
 </html>

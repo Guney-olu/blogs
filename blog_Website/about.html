@@ -9,62 +9,160 @@
       margin: 0;
       padding: 0;
       background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', monospace;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .container {
       text-align: center;
+      width: 100%;
+      max-width: 600px;
     }
     .box {
-      width: 80%;
-      max-width: 400px;
+      width: 90%;
       margin: 0 auto; 
       background-color: #f0f0f0; 
-      padding: 50px; 
+      padding: 40px; 
       border-radius: 10px; 
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+      position: relative;
+      overflow: hidden;
+    }
+    .box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #000, #555, #000);
     }
     .text {
-      font-size: 1em;
+      font-size: 1.2em;
       font-weight: bold;
+      line-height: 1.5;
+      margin-top: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .logo-container {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .pixel-logo {
+      background-color: #f0f0f0;
+    }
+    .blinker {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      background-color: #000;
+      animation: blink 1s step-end infinite;
+      margin-left: 5px;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      border: 2px solid #333;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+    .pixel-decoration {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      opacity: 0.2;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="box">
-        <svg width="320" height="50" style="background-color: #f0f0f0; margin-bottom: 30px;">
-            <!-- Letter A -->
-            <rect x="10" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="40" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="10" y="0" width="40" height="10" fill="#000000"></rect>
-            <rect x="20" y="20" width="20" height="10" fill="#000000"></rect>
+      <!-- Random pixel decorations -->
+      <div class="pixel-decoration" style="top: 20px; right: 30px;"></div>
+      <div class="pixel-decoration" style="bottom: 40px; left: 25px;"></div>
+      <div class="pixel-decoration" style="top: 50px; left: 60px;"></div>
+      <div class="pixel-decoration" style="bottom: 70px; right: 45px;"></div>
       
-            <!-- Letter b -->
-            <rect x="70" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="70" y="0" width="30" height="10" fill="#000000"></rect>
-            <rect x="70" y="20" width="20" height="10" fill="#000000"></rect>
-            <rect x="100" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="70" y="30" width="20" height="10" fill="#000000"></rect>
-      
-            <!-- Letter o -->
-            <rect x="130" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="160" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="130" y="0" width="30" height="10" fill="#000000"></rect>
-            <rect x="130" y="30" width="30" height="10" fill="#000000"></rect>
-      
-            <!-- Letter u -->
-            <rect x="190" y="0" width="10" height="30" fill="#000000"></rect>
-            <rect x="220" y="0" width="10" height="30" fill="#000000"></rect>
-            <rect x="190" y="30" width="40" height="10" fill="#000000"></rect>
-      
-            <!-- Letter t -->
-            <rect x="260" y="0" width="40" height="10" fill="#000000"></rect>
-            <rect x="280" y="0" width="10" height="40" fill="#000000"></rect>
-            <rect x="270" y="0" width="40" height="10" fill="#000000"></rect>
+      <div class="logo-container">
+        <svg width="320" height="60" class="pixel-logo">
+          <!-- Letter A -->
+          <rect x="10" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="40" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="10" y="10" width="40" height="10" fill="#000000"></rect>
+          <rect x="20" y="30" width="20" height="10" fill="#000000"></rect>
     
-          </svg>  
-      <h2 class="text">This website is a collection of some random thoughts and lazy research blogs written using emacs.</h2>
+          <!-- Letter b -->
+          <rect x="70" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="70" y="10" width="30" height="10" fill="#000000"></rect>
+          <rect x="70" y="30" width="20" height="10" fill="#000000"></rect>
+          <rect x="100" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="70" y="40" width="30" height="10" fill="#000000"></rect>
+    
+          <!-- Letter o -->
+          <rect x="130" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="160" y="10" width="10" height="40" fill="#000000"></rect>
+          <rect x="130" y="10" width="40" height="10" fill="#000000"></rect>
+          <rect x="130" y="40" width="40" height="10" fill="#000000"></rect>
+    
+          <!-- Letter u -->
+          <rect x="190" y="10" width="10" height="30" fill="#000000"></rect>
+          <rect x="220" y="10" width="10" height="30" fill="#000000"></rect>
+          <rect x="190" y="40" width="40" height="10" fill="#000000"></rect>
+    
+          <!-- Letter t -->
+          <rect x="250" y="10" width="40" height="10" fill="#000000"></rect>
+          <rect x="270" y="10" width="10" height="40" fill="#000000"></rect>
+        </svg>
+        <div class="blinker"></div>
+      </div>
+      
+      <h2 class="text">This website is a collection of some random thoughts and lazy research blogs written using emacs<span class="blinker"></span></h2>
+      
+      <div class="footer">
+        <p>Made with pixels and minimalism in mind</p>
+        <a href="../index.html" class="back-button">← Back to blogs</a>
+      </div>
     </div>
   </div>
+
+  <script>
+    function createRandomPixels() {
+      const box = document.querySelector('.box');
+      for (let i = 0; i < 8; i++) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel-decoration');
+        pixel.style.top = Math.random() * 100 + '%';
+        pixel.style.left = Math.random() * 100 + '%';
+        pixel.style.opacity = (Math.random() * 0.15 + 0.05).toString();
+        box.appendChild(pixel);
+      }
+    }
+    
+    window.onload = function() {
+      createRandomPixels();
+    }
+  </script>
 </body>
 </html>
